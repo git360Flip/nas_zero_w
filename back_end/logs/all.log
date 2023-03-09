@@ -1,0 +1,315 @@
+07/03/2023 20:49:06 | [32minfo[39m: Waiting database... 
+07/03/2023 20:49:06 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 20:49:06 | [32minfo[39m: Connected to database ! 
+07/03/2023 20:49:06 | [32minfo[39m: Seeding root user... 
+07/03/2023 20:49:06 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 20:49:06 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 20:50:29 | [32minfo[39m: Stopping server... 
+07/03/2023 20:50:29 | [32minfo[39m: Disconnecting from database... 
+07/03/2023 20:50:29 | [32minfo[39m: Disconnected from database ! 
+07/03/2023 20:53:30 | [32minfo[39m: Waiting database... 
+07/03/2023 20:53:30 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 20:53:30 | [32minfo[39m: Connected to database ! 
+07/03/2023 20:53:30 | [32minfo[39m: Seeding root user... 
+07/03/2023 20:53:30 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 20:53:30 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:07:09 | [32minfo[39m: Stopping server... 
+07/03/2023 21:07:09 | [32minfo[39m: Disconnecting from database... 
+07/03/2023 21:07:09 | [32minfo[39m: Disconnected from database ! 
+07/03/2023 21:07:27 | [32minfo[39m: Waiting database... 
+07/03/2023 21:07:27 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:07:27 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:07:27 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:07:27 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 21:07:27 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:08:59 | [32mhttp[39m: GET / 200 30 - 3.710 ms 
+07/03/2023 21:08:59 | [31merror[39m: /favicon.ico not found 
+07/03/2023 21:08:59 | [32mhttp[39m: GET /favicon.ico 404 63 - 3.168 ms 
+07/03/2023 21:11:45 | [32minfo[39m: Waiting database... 
+07/03/2023 21:11:45 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:11:45 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:11:45 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:11:45 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 21:11:45 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:11:49 | [31merror[39m: /user/login not found 
+07/03/2023 21:11:49 | [32mhttp[39m: POST /user/login 404 62 - 4.845 ms 
+07/03/2023 21:12:35 | [32minfo[39m: Waiting database... 
+07/03/2023 21:12:35 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:12:35 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:12:35 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:12:35 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 21:12:35 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:12:40 | [31merror[39m: No user has been set 
+07/03/2023 21:12:40 | [32mhttp[39m: POST /user/login 404 61 - 39.092 ms 
+07/03/2023 21:12:53 | [31merror[39m: /user/login not found 
+07/03/2023 21:12:53 | [32mhttp[39m: GET /user/login 404 62 - 3.125 ms 
+07/03/2023 21:13:19 | [32minfo[39m: Stopping server... 
+07/03/2023 21:13:19 | [32minfo[39m: Disconnecting from database... 
+07/03/2023 21:13:19 | [32minfo[39m: Disconnected from database ! 
+07/03/2023 21:16:05 | [32minfo[39m: Waiting database... 
+07/03/2023 21:16:05 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:16:05 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:16:05 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:16:05 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 21:16:05 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:16:19 | [31merror[39m: No user has been set 
+07/03/2023 21:16:19 | [32mhttp[39m: POST /user/login 404 61 - 45.280 ms 
+07/03/2023 21:16:24 | [31merror[39m: /user/login not found 
+07/03/2023 21:16:24 | [32mhttp[39m: GET /user/login 404 62 - 2.830 ms 
+07/03/2023 21:17:25 | [32minfo[39m: Stopping server... 
+07/03/2023 21:17:25 | [32minfo[39m: Disconnecting from database... 
+07/03/2023 21:17:25 | [32minfo[39m: Disconnected from database ! 
+07/03/2023 21:17:40 | [32minfo[39m: Waiting database... 
+07/03/2023 21:17:40 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:17:40 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:17:40 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:17:40 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 21:17:40 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:17:53 | [31merror[39m: /user/login not found 
+07/03/2023 21:17:53 | [32mhttp[39m: GET /user/login 404 62 - 3.644 ms 
+07/03/2023 21:20:18 | [32minfo[39m: Waiting database... 
+07/03/2023 21:20:18 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:20:18 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:20:18 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:20:18 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 21:20:18 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:20:24 | [31merror[39m: /user/login not found 
+07/03/2023 21:20:24 | [32mhttp[39m: GET /user/login 404 62 - 6.552 ms 
+07/03/2023 21:21:10 | [31merror[39m: No user has been set 
+07/03/2023 21:21:10 | [32mhttp[39m: POST /user/login 404 61 - 51.188 ms 
+07/03/2023 21:22:19 | [32mhttp[39m: GET / 200 30 - 5.844 ms 
+07/03/2023 21:23:08 | [31merror[39m: No user has been set 
+07/03/2023 21:23:08 | [32mhttp[39m: POST /user/login 404 61 - 34.277 ms 
+07/03/2023 21:24:29 | [32minfo[39m: Waiting database... 
+07/03/2023 21:24:29 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:24:29 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:24:29 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:24:30 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:24:35 | [32mhttp[39m: POST /user/login 200 28 - 261.426 ms 
+07/03/2023 21:24:50 | [32mhttp[39m: POST /user/login 200 28 - 264.709 ms 
+07/03/2023 21:24:57 | [32mhttp[39m: POST /user/login 200 28 - 267.774 ms 
+07/03/2023 21:25:43 | [32mhttp[39m: POST /user/login 200 28 - 264.716 ms 
+07/03/2023 21:25:58 | [32mhttp[39m: POST /user/login 200 28 - 273.172 ms 
+07/03/2023 21:28:40 | [32minfo[39m: Waiting database... 
+07/03/2023 21:28:40 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:28:41 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:28:41 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:28:41 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 21:28:41 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:28:48 | [32mhttp[39m: POST /user/login 200 28 - 251.122 ms 
+07/03/2023 21:30:29 | [32minfo[39m: Waiting database... 
+07/03/2023 21:30:29 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:30:29 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:30:29 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:30:29 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 21:30:29 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:30:33 | [32mhttp[39m: POST /user/login 200 28 - 251.852 ms 
+07/03/2023 21:31:00 | [32minfo[39m: Waiting database... 
+07/03/2023 21:31:00 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:31:00 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:31:00 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:31:00 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 21:31:00 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:31:04 | [32mhttp[39m: POST /user/login 200 28 - 257.584 ms 
+07/03/2023 21:31:37 | [32minfo[39m: Waiting database... 
+07/03/2023 21:31:37 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:31:37 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:31:37 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:31:37 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 21:31:37 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:31:42 | [32minfo[39m: Waiting database... 
+07/03/2023 21:31:42 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:31:42 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:31:42 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:31:42 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 21:31:42 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:31:47 | [32mhttp[39m: POST /user/login 200 42 - 267.359 ms 
+07/03/2023 21:32:26 | [32mhttp[39m: POST /user/login 200 42 - 307.418 ms 
+07/03/2023 21:32:32 | [32mhttp[39m: POST /user/login 200 42 - 286.320 ms 
+07/03/2023 21:32:45 | [32mhttp[39m: POST /user/login 200 42 - 295.102 ms 
+07/03/2023 21:32:57 | [32mhttp[39m: POST /user/login 200 42 - 284.587 ms 
+07/03/2023 21:33:31 | [32mhttp[39m: POST /user/login 200 42 - 290.695 ms 
+07/03/2023 21:35:11 | [32mhttp[39m: POST /user/login 200 42 - 284.703 ms 
+07/03/2023 21:35:17 | [32mhttp[39m: POST /user/login 200 42 - 287.650 ms 
+07/03/2023 21:35:19 | [32mhttp[39m: POST /user/login 200 42 - 287.855 ms 
+07/03/2023 21:39:23 | [32minfo[39m: Waiting database... 
+07/03/2023 21:39:23 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+07/03/2023 21:39:23 | [32minfo[39m: Connected to database ! 
+07/03/2023 21:39:23 | [32minfo[39m: Seeding root user... 
+07/03/2023 21:39:23 | [32minfo[39m: Root user already exists. Skipping database seeding 
+07/03/2023 21:39:23 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+07/03/2023 21:39:31 | [32mhttp[39m: GET / 200 19 - 4.156 ms 
+07/03/2023 21:43:36 | [32mhttp[39m: GET / 200 19 - 2.005 ms 
+07/03/2023 21:44:47 | [32mhttp[39m: GET / 200 19 - 2.663 ms 
+07/03/2023 21:45:57 | [32mhttp[39m: GET / 200 19 - 1.208 ms 
+07/03/2023 21:48:17 | [32mhttp[39m: GET / 200 19 - 0.860 ms 
+07/03/2023 21:48:24 | [32mhttp[39m: POST /user/login 200 42 - 339.615 ms 
+07/03/2023 21:49:07 | [32mhttp[39m: GET / 200 19 - 1.914 ms 
+07/03/2023 21:49:36 | [32mhttp[39m: GET / 200 19 - 0.546 ms 
+07/03/2023 21:49:45 | [32mhttp[39m: POST /user/login 200 42 - 302.040 ms 
+07/03/2023 21:50:10 | [32mhttp[39m: GET / 200 19 - 5.455 ms 
+07/03/2023 21:50:45 | [32mhttp[39m: POST /user/login 200 42 - 295.644 ms 
+07/03/2023 21:52:53 | [32mhttp[39m: GET / 200 19 - 1.615 ms 
+07/03/2023 21:52:57 | [32mhttp[39m: GET / 200 19 - 1.448 ms 
+07/03/2023 21:53:03 | [32mhttp[39m: GET / 200 19 - 1.115 ms 
+07/03/2023 21:53:14 | [32mhttp[39m: POST /user/login 200 42 - 305.127 ms 
+07/03/2023 21:53:17 | [32mhttp[39m: GET / 200 19 - 0.613 ms 
+07/03/2023 21:54:02 | [32mhttp[39m: GET / 200 19 - 0.663 ms 
+07/03/2023 21:54:08 | [32mhttp[39m: GET / 200 19 - 0.921 ms 
+07/03/2023 21:54:19 | [32mhttp[39m: GET / 200 19 - 0.786 ms 
+07/03/2023 21:54:22 | [32mhttp[39m: GET / 200 19 - 1.025 ms 
+07/03/2023 21:54:27 | [32mhttp[39m: GET / 200 19 - 0.305 ms 
+07/03/2023 21:54:30 | [32mhttp[39m: GET / 200 19 - 0.362 ms 
+07/03/2023 21:56:47 | [32mhttp[39m: GET / 200 19 - 1.508 ms 
+07/03/2023 21:56:51 | [32mhttp[39m: POST /user/login 200 42 - 305.447 ms 
+07/03/2023 21:57:05 | [32mhttp[39m: GET / 200 19 - 0.310 ms 
+07/03/2023 21:57:10 | [32mhttp[39m: GET / 200 19 - 2.013 ms 
+07/03/2023 21:57:30 | [31merror[39m: Invalid password 
+07/03/2023 21:57:30 | [32mhttp[39m: POST /user/login 401 57 - 300.393 ms 
+07/03/2023 21:57:33 | [31merror[39m: Invalid password 
+07/03/2023 21:57:33 | [32mhttp[39m: POST /user/login 401 57 - 284.855 ms 
+07/03/2023 21:57:36 | [32mhttp[39m: POST /user/login 200 42 - 290.401 ms 
+07/03/2023 21:57:48 | [32mhttp[39m: POST /user/login 200 42 - 290.382 ms 
+07/03/2023 22:05:09 | [32mhttp[39m: GET / 200 19 - 4.500 ms 
+08/03/2023 23:49:12 | [32minfo[39m: Waiting database... 
+08/03/2023 23:49:12 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+08/03/2023 23:49:12 | [32minfo[39m: Connected to database ! 
+08/03/2023 23:49:12 | [32minfo[39m: Seeding root user... 
+08/03/2023 23:49:12 | [32minfo[39m: Root user already exists. Skipping database seeding 
+08/03/2023 23:49:12 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+08/03/2023 23:49:18 | [32mhttp[39m: GET / 200 2 - 3.417 ms 
+08/03/2023 23:50:09 | [32minfo[39m: Waiting database... 
+08/03/2023 23:50:09 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+08/03/2023 23:50:09 | [32minfo[39m: Connected to database ! 
+08/03/2023 23:50:09 | [32minfo[39m: Seeding root user... 
+08/03/2023 23:50:09 | [32minfo[39m: Root user already exists. Skipping database seeding 
+08/03/2023 23:50:09 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+08/03/2023 23:50:46 | [32minfo[39m: Waiting database... 
+08/03/2023 23:50:46 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+08/03/2023 23:50:46 | [32minfo[39m: Connected to database ! 
+08/03/2023 23:50:46 | [32minfo[39m: Seeding root user... 
+08/03/2023 23:50:46 | [32minfo[39m: Root user already exists. Skipping database seeding 
+08/03/2023 23:50:46 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+08/03/2023 23:50:47 | [32minfo[39m: Waiting database... 
+08/03/2023 23:50:47 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+08/03/2023 23:50:47 | [32minfo[39m: Connected to database ! 
+08/03/2023 23:50:47 | [32minfo[39m: Seeding root user... 
+08/03/2023 23:50:47 | [32minfo[39m: Root user already exists. Skipping database seeding 
+08/03/2023 23:50:47 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+08/03/2023 23:50:51 | [31merror[39m: The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received function router 
+08/03/2023 23:50:51 | [32mhttp[39m: GET / 500 180 - 4.065 ms 
+08/03/2023 23:52:29 | [32minfo[39m: Waiting database... 
+08/03/2023 23:52:29 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+08/03/2023 23:52:29 | [32minfo[39m: Connected to database ! 
+08/03/2023 23:52:29 | [32minfo[39m: Seeding root user... 
+08/03/2023 23:52:29 | [32minfo[39m: Root user already exists. Skipping database seeding 
+08/03/2023 23:52:29 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+08/03/2023 23:53:35 | [32minfo[39m: Waiting database... 
+08/03/2023 23:53:35 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+08/03/2023 23:53:35 | [32minfo[39m: Connected to database ! 
+08/03/2023 23:53:35 | [32minfo[39m: Seeding root user... 
+08/03/2023 23:53:35 | [32minfo[39m: Root user already exists. Skipping database seeding 
+08/03/2023 23:53:35 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+08/03/2023 23:53:37 | [32mhttp[39m: GET / 200 30 - 2.676 ms 
+08/03/2023 23:53:49 | [32minfo[39m: Waiting database... 
+08/03/2023 23:53:49 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+08/03/2023 23:53:49 | [32minfo[39m: Connected to database ! 
+08/03/2023 23:53:49 | [32minfo[39m: Seeding root user... 
+08/03/2023 23:53:49 | [32minfo[39m: Root user already exists. Skipping database seeding 
+08/03/2023 23:53:49 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+08/03/2023 23:54:17 | [32minfo[39m: Waiting database... 
+08/03/2023 23:54:17 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+08/03/2023 23:54:17 | [32minfo[39m: Connected to database ! 
+08/03/2023 23:54:17 | [32minfo[39m: Seeding root user... 
+08/03/2023 23:54:17 | [32minfo[39m: Root user already exists. Skipping database seeding 
+08/03/2023 23:54:17 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+08/03/2023 23:55:56 | [32minfo[39m: Waiting database... 
+08/03/2023 23:55:56 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+08/03/2023 23:55:56 | [32minfo[39m: Connected to database ! 
+08/03/2023 23:55:56 | [32minfo[39m: Seeding root user... 
+08/03/2023 23:55:56 | [32minfo[39m: Root user already exists. Skipping database seeding 
+08/03/2023 23:55:56 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+08/03/2023 23:56:05 | [32minfo[39m: Waiting database... 
+08/03/2023 23:56:05 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+08/03/2023 23:56:05 | [32minfo[39m: Connected to database ! 
+08/03/2023 23:56:05 | [32minfo[39m: Seeding root user... 
+08/03/2023 23:56:05 | [32minfo[39m: Root user already exists. Skipping database seeding 
+08/03/2023 23:56:05 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+08/03/2023 23:56:07 | [32minfo[39m: Waiting database... 
+08/03/2023 23:56:07 | [32minfo[39m: Starting a postgresql pool with 17 connections. 
+08/03/2023 23:56:07 | [32minfo[39m: Connected to database ! 
+08/03/2023 23:56:07 | [32minfo[39m: Seeding root user... 
+08/03/2023 23:56:07 | [32minfo[39m: Root user already exists. Skipping database seeding 
+08/03/2023 23:56:07 | [32minfo[39m: Server listening on port 8000 on mode dev... 
+08/03/2023 23:56:12 | [32mhttp[39m: GET /user 200 42 - 15.588 ms 
+09/03/2023 00:12:08 | [32mhttp[39m: GET /user 200 42 - 81.254 ms 
+09/03/2023 00:12:09 | [32mhttp[39m: GET /user 200 42 - 11.211 ms 
+09/03/2023 00:13:46 | [32mhttp[39m: GET /user 200 42 - 32.018 ms 
+09/03/2023 00:13:50 | [32mhttp[39m: GET /user 200 42 - 4.159 ms 
+09/03/2023 00:14:01 | [32mhttp[39m: GET /user 200 42 - 10.596 ms 
+09/03/2023 00:14:05 | [32mhttp[39m: GET /user 200 42 - 12.656 ms 
+09/03/2023 00:14:51 | [32mhttp[39m: GET /user 200 42 - 11.537 ms 
+09/03/2023 00:14:53 | [32mhttp[39m: GET /user 200 42 - 13.528 ms 
+09/03/2023 00:14:57 | [32mhttp[39m: GET /user 200 42 - 7.911 ms 
+09/03/2023 00:15:27 | [32mhttp[39m: GET /user 200 42 - 32.142 ms 
+09/03/2023 00:15:28 | [32mhttp[39m: GET /user 200 42 - 5.916 ms 
+09/03/2023 00:15:30 | [32mhttp[39m: GET /user 200 42 - 4.992 ms 
+09/03/2023 00:16:10 | [32mhttp[39m: GET /user 200 42 - 44.719 ms 
+09/03/2023 00:16:12 | [32mhttp[39m: GET /user 200 42 - 7.789 ms 
+09/03/2023 00:16:13 | [32mhttp[39m: GET /user 200 42 - 11.931 ms 
+09/03/2023 00:16:20 | [32mhttp[39m: GET /user 200 42 - 4.813 ms 
+09/03/2023 00:16:21 | [32mhttp[39m: GET /user 200 42 - 5.722 ms 
+09/03/2023 00:16:22 | [32mhttp[39m: GET /user 200 42 - 14.198 ms 
+09/03/2023 00:16:29 | [32mhttp[39m: GET /user 200 42 - 20.994 ms 
+09/03/2023 00:18:16 | [32mhttp[39m: GET /user 200 42 - 33.159 ms 
+09/03/2023 00:18:21 | [32mhttp[39m: GET /user 200 42 - 19.002 ms 
+09/03/2023 00:18:23 | [32mhttp[39m: GET /user 200 42 - 7.632 ms 
+09/03/2023 00:18:26 | [32mhttp[39m: GET /user 200 42 - 4.451 ms 
+09/03/2023 00:21:02 | [32mhttp[39m: GET /user 200 42 - 26.644 ms 
+09/03/2023 00:21:48 | [32mhttp[39m: GET /user 200 42 - 17.900 ms 
+09/03/2023 00:21:49 | [32mhttp[39m: GET /user 200 42 - 18.849 ms 
+09/03/2023 00:22:13 | [32mhttp[39m: GET /user 200 42 - 18.899 ms 
+09/03/2023 00:22:15 | [32mhttp[39m: GET /user 200 42 - 5.542 ms 
+09/03/2023 00:22:16 | [32mhttp[39m: GET /user 200 42 - 4.154 ms 
+09/03/2023 00:22:20 | [32mhttp[39m: GET /user 200 42 - 4.173 ms 
+09/03/2023 00:22:26 | [32mhttp[39m: POST /user/login 200 42 - 296.646 ms 
+09/03/2023 00:22:29 | [31merror[39m: Invalid password 
+09/03/2023 00:22:29 | [32mhttp[39m: POST /user/login 401 57 - 284.251 ms 
+09/03/2023 00:27:06 | [32mhttp[39m: GET /user 200 42 - 17.549 ms 
+09/03/2023 00:27:10 | [31merror[39m: Invalid password 
+09/03/2023 00:27:10 | [32mhttp[39m: POST /user/login 401 57 - 288.625 ms 
+09/03/2023 00:27:19 | [32mhttp[39m: POST /user/login 200 42 - 286.119 ms 
+09/03/2023 00:27:22 | [31merror[39m: Invalid password 
+09/03/2023 00:27:22 | [32mhttp[39m: POST /user/login 401 57 - 288.154 ms 
+09/03/2023 00:28:42 | [31merror[39m: Invalid password 
+09/03/2023 00:28:42 | [32mhttp[39m: POST /user/login 401 57 - 307.685 ms 
+09/03/2023 00:28:43 | [31merror[39m: Invalid password 
+09/03/2023 00:28:43 | [32mhttp[39m: POST /user/login 401 57 - 254.824 ms 
+09/03/2023 00:29:25 | [32mhttp[39m: GET /user 200 42 - 24.342 ms 
+09/03/2023 00:29:28 | [31merror[39m: Invalid password 
+09/03/2023 00:29:28 | [32mhttp[39m: POST /user/login 401 57 - 284.210 ms 
+09/03/2023 00:29:31 | [32mhttp[39m: POST /user/login 200 42 - 283.070 ms 
+09/03/2023 00:29:33 | [31merror[39m: Invalid password 
+09/03/2023 00:29:33 | [32mhttp[39m: POST /user/login 401 57 - 284.594 ms 
+09/03/2023 00:29:35 | [31merror[39m: Invalid password 
+09/03/2023 00:29:35 | [32mhttp[39m: POST /user/login 401 57 - 281.734 ms 
+09/03/2023 00:29:48 | [31merror[39m: Invalid password 
+09/03/2023 00:29:48 | [32mhttp[39m: POST /user/login 401 57 - 290.018 ms 
+09/03/2023 00:29:51 | [31merror[39m: Invalid password 
+09/03/2023 00:29:51 | [32mhttp[39m: POST /user/login 401 57 - 287.883 ms 
+09/03/2023 00:30:03 | [32mhttp[39m: POST /user/login 200 42 - 284.020 ms 
+09/03/2023 00:30:05 | [31merror[39m: Invalid password 
+09/03/2023 00:30:05 | [32mhttp[39m: POST /user/login 401 57 - 281.525 ms 
+09/03/2023 00:38:05 | [32mhttp[39m: GET /user 200 42 - 48.153 ms 
+09/03/2023 00:38:44 | [32mhttp[39m: GET /user 200 42 - 25.923 ms 
+09/03/2023 00:39:19 | [32mhttp[39m: GET /user 200 42 - 22.861 ms 
+09/03/2023 00:41:07 | [32mhttp[39m: POST /user/login 200 42 - 288.858 ms 
+09/03/2023 00:41:10 | [32mhttp[39m: POST /user/login 200 42 - 291.818 ms 
+09/03/2023 00:41:13 | [31merror[39m: Invalid password 
+09/03/2023 00:41:13 | [32mhttp[39m: POST /user/login 401 57 - 285.644 ms 
+09/03/2023 00:41:15 | [31merror[39m: Invalid password 
+09/03/2023 00:41:15 | [32mhttp[39m: POST /user/login 401 57 - 285.390 ms 
+09/03/2023 00:41:16 | [32mhttp[39m: GET /user 200 42 - 5.518 ms 
+09/03/2023 01:18:24 | [32minfo[39m: Stopping server... 
+09/03/2023 01:18:24 | [32minfo[39m: Disconnecting from database... 
+09/03/2023 01:18:24 | [32minfo[39m: Disconnected from database ! 

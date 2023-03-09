@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+    api:
+        build: ./back_end
+        restart: always
+        environment:
+            - PORT
+            - ROOT_ID
+            - PIN_CODE
+            - SECRET_KEY
+            - MODE=prod
+            - DATABASE_URL=postgresql://$DATABASE_USER:$DATABASE_PASSWORD@db:$DATABASE_PORT/$DATABASE_NAME
+        ports:
+            - "${PORT}:${PORT}"
+        networks:
+            - backend
+        volumes:
+            - ./uploads:/app/uploads
+            - ./logs:/app/logs
+    
+    web:
+        build: ./front_end
+
+    db:
+        image: postgres:alpine
+        restart: always
+        environment: 
+            - POSTGRES_USER=${DATABASE_USER}
+            - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+            - POSTGRES_DB=${DATABASE_NAME}
+        networks:
+            - backend
+        volumes:
+            - db-data:/var/lib/postgresql/data
+
+networks:
+    backend:
+
+volumes:
+    db-data:

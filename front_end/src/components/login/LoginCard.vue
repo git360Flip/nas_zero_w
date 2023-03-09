@@ -6,7 +6,7 @@ const pin0 = ref<HTMLInputElement | null>(null)
 const pin1 = ref<HTMLInputElement | null>(null)
 const pin2 = ref<HTMLInputElement | null>(null)
 const pin3 = ref<HTMLInputElement | null>(null)
-const showErrorMsg = ref(false)
+const errorMsg = ref("");
 
 onMounted(() => {
   pin0.value?.focus()
@@ -17,22 +17,29 @@ function pinFocus(ref: HTMLInputElement | null) {
   ref?.select()
 }
 
-function sendCode() {
+async function sendCode() {
   const code = getCode()
   if (code.length === 4) {
     form.value?.reset()
     pinFocus(pin0.value)
-    if (code !== '1111') {
-      showErrorMsg.value = true
+    const response = await fetch(`https://127.0.0.1:8000/user/login`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({password: code})
+      })
+    if (response.status === 200) {
+      errorMsg.value = ""
+    } else if (response.status === 401) {
+      errorMsg.value = "Invalid Password"
+    } else {
+      errorMsg.value = "Not Connected"
     }
-    // CALL check password API
-    console.log(code)
   }
 }
 
-function validateInput(evt: KeyboardEvent, ref: HTMLInputElement | null): boolean {
+async function validateInput(evt: KeyboardEvent, ref: HTMLInputElement | null): Promise<boolean> {
   if (evt.key === 'Enter') {
-    sendCode()
+    await sendCode();
   }
   const isValueSelected =
     ref != null && ref.selectionStart === 0 && ref.selectionEnd === ref.innerText.length
@@ -46,25 +53,25 @@ function validateInput(evt: KeyboardEvent, ref: HTMLInputElement | null): boolea
   return false
 }
 
-function isValidPinValue(evt: KeyboardEvent, ref: HTMLInputElement | null) {
-  if (validateInput(evt, ref) === false) {
+async function isValidPinValue(evt: KeyboardEvent, ref: HTMLInputElement | null) {
+  if (await validateInput(evt, ref) === false) {
     evt.preventDefault()
   }
 }
 
-function focusNextPin(
+async function focusNextPin(
   evt: KeyboardEvent,
   ref: HTMLInputElement | null,
   nextRef: HTMLInputElement | null
 ) {
-  if (validateInput(evt, ref)) {
+  if (await validateInput(evt, ref)) {
     nextRef?.focus()
   }
 }
 
-function tryPin(evt: KeyboardEvent, ref: HTMLInputElement | null) {
-  if (validateInput(evt, ref)) {
-    sendCode()
+async function tryPin(evt: KeyboardEvent, ref: HTMLInputElement | null) {
+  if (await validateInput(evt, ref)) {
+    await sendCode();
   }
 }
 
@@ -79,8 +86,8 @@ function getCode(): string {
 <template>
   <div class="card">
     <h1 class="white">Password</h1>
-    <div v-show="showErrorMsg">
-      <h3 class="red">Invalid Password</h3>
+    <div v-show="errorMsg.length > 0">
+      <h3 class="red">{{ errorMsg }}</h3>
     </div>
     <form ref="form">
       <input
