@@ -32,7 +32,7 @@ async function sendCode() {
     } else if (response.status === 401) {
       errorMsg.value = "Invalid Password"
     } else {
-      errorMsg.value = "Not Connected"
+      errorMsg.value = "User not created"
     }
   }
 }

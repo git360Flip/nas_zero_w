@@ -1,6 +1,23 @@
 version: '3'
 
 services:
+    reverse_proxy:
+        build: ./reverse_proxy
+        restart: always
+        networks:
+          - reverse_proxy_network
+        ports:
+          - "443:443"
+          - "80:80"
+
+    web:
+        build: ./front_end
+        restart: always
+        depends_on:
+            - reverse_proxy
+        networks:
+            - reverse_proxy_network
+
     api:
         build: ./back_end
         restart: always
@@ -10,17 +27,19 @@ services:
             - PIN_CODE
             - SECRET_KEY
             - MODE=prod
+            - REDIS_HOST=redis
+            - REDIS_PORT
             - DATABASE_URL=postgresql://$DATABASE_USER:$DATABASE_PASSWORD@db:$DATABASE_PORT/$DATABASE_NAME
         ports:
             - "${PORT}:${PORT}"
         networks:
             - backend
-        volumes:
-            - ./uploads:/app/uploads
-            - ./logs:/app/logs
-    
-    web:
-        build: ./front_end
+
+    redis:
+        image: redis:latest
+        restart: always
+        networks:
+            - backend
 
     db:
         image: postgres:alpine
@@ -36,6 +55,7 @@ services:
 
 networks:
     backend:
+    reverse_proxy_network:
 
 volumes:
     db-data:

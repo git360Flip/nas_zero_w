@@ -3,6 +3,8 @@ import handler from 'express-async-handler';
 import * as controllers from './userControllers';
 import validate from '../../middlewares/validationMiddleware';
 import { UserLoginDto } from './userTypes';
+import httpStatus from 'http-status-codes';
+import authMiddleware from '../../middlewares/authMiddleware';
 
 const router = express.Router();
 
@@ -46,7 +48,16 @@ router.post(
   validate(UserLoginDto),
   handler(async (req, res) => {
     const user = await controllers.login(req.body, res);
-    res.send(user);
+    res.sendStatus(httpStatus.OK);
+  }),
+);
+
+router.post(
+  '/user/logout',
+  authMiddleware,
+  handler(async (_, res) => {
+    await controllers.logout();
+    res.sendStatus(httpStatus.OK);
   }),
 );
 

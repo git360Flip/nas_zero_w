@@ -2,7 +2,8 @@ import { RequestHandler } from "express";
 import { config } from '../appConfig';
 import httpStatus from 'http-status-codes';
 import createError from 'http-errors';
-import jwt from 'jsonwebtoken';
+import { jwtr } from "../appStore";
+import logger from "../appLogger";
 
 /**
  * Auth middleware
@@ -10,7 +11,7 @@ import jwt from 'jsonwebtoken';
  *
  * Send 401 -- Unauthorized if the user has not a valid JWT token
  */
-const authMiddleware: RequestHandler = (req, res, next) => {
+const authMiddleware: RequestHandler = async (req, res, next) => {
   let token: string | null = null;
   let headers = req.headers['x-access-token'] || req.headers['authorization'];
 
@@ -27,25 +28,25 @@ const authMiddleware: RequestHandler = (req, res, next) => {
     }
   }
 
-  if (token != null) {
-    jwt.verify(token, config.secretKey, (err, decoded) => {
-      if (err) {
-        next(createError(httpStatus.UNAUTHORIZED, 'Invalid token'))
-      } else if (decoded != null && typeof decoded !== "string") {
-        const expiresIn = 24 * 60 * 60;
-        const newToken  = jwt.sign({
-          id: decoded.id
-        },
-        config.secretKey,
-        {
-          expiresIn: expiresIn
-        });
-        res.header('Authorization', 'Bearer ' + newToken);
-        next();
-      }
-    });
+  if (token != null && jwtr != null) {
+    try {
+      const tokenData = await jwtr.verify(token, config.secretKey);
+      const expiresIn = 24 * 60 * 60;
+      const newToken  = await jwtr.sign({
+        jti: tokenData.jti
+      },
+      config.secretKey,
+      {
+        expiresIn: expiresIn
+      });
+      res.header('Authorization', 'Bearer ' + newToken);
+      next();
+    } catch {
+      next(createError(httpStatus.UNAUTHORIZED, 'You must be logged in'))
+    }
+  } else {
+    next(createError(httpStatus.UNAUTHORIZED, 'You must be logged in'))
   }
-  next(createError(httpStatus.UNAUTHORIZED, 'You must be logged in'))
 };
 
 export default authMiddleware;

@@ -6,15 +6,14 @@ import type UserRo from '../../utils/types/userRo';
 const store = useStore();
 
 async function getLastConnectionDate() {
-    const response = await fetch(`https://127.0.0.1:8000/user`, {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'},
-      })
-    if (response.status == 200) {
-      const jsonData = await response.json() as UserRo;
-      store.state.connection = jsonData.lastLoggedInDate;
-    }
-
+  const response = await fetch(`https://127.0.0.1:8000/user`, {
+      method: 'GET',
+      headers: {'Content-Type': 'application/json'},
+    })
+  if (response.status == 200) {
+    const jsonData = await response.json() as UserRo;
+    store.state.connection = jsonData.lastLoggedInDate;
+  }
 }
 
 onMounted(() => {
