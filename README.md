@@ -1,12 +1,26 @@
 # nas_zero_w
 
-Private NAS on Raspberry Pi Zero W,  
-connect a hard disk to the USB socket and access the web page to send or download the files on the disk.
+Private NAS on Raspberry Pi Zero W, connect a hard disk to the USB socket,  
+Access the web page to send or download the files on the disk.
 
-## Details
+## Requirements
 
-Build and run two docker containers on system reboot with the assigned environments variables.  
-One for a NodeJS back-end and the other for the VueJs front-end.
+You need a Raspberry Pi Zero W to run this private NAS.  
+I recommend you to buy a starter kit to get these essential items:
+
+1. Micro SD Card with micro SD to SD Adapter to install Raspbian in your Pi Zero W
+2. 5V Power supply
+3. Micro USB to USB Adapter to connect your hard disk
+4. (OPTIONAL) micro HDMI to HDMI Adapter
+
+The micro HDMI to HDMI Adapter can be useful for displaying the screen of Raspbian.  
+The micro USB to USB Adapter can connect a USB Keyboard to control your Pi Zero W.
+
+### Prepare Pi Zero W
+
+1. Install Raspbian https://www.raspberrypi.com/documentation/computers/getting-started.html
+2. Connect your Pi Zero W to your private network
+3. Create an Access Point https://thepi.io/how-to-use-your-raspberry-pi-as-a-wireless-access-point/
 
 ## Setup
 
