@@ -7,7 +7,7 @@ import requestLogger from './middlewares/requestLogger';
 import errorMiddleware from './middlewares/errorMiddleware';
 import notFoundMiddleware from './middlewares/notFoundMiddleware';
 
-// Production and developement servers
+// Development and production servers
 const corsOptions = {
   origin: ['http://localhost:5173', 'https://127.0.0.1' ],
   credentials: true,

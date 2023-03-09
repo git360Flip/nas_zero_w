@@ -11,7 +11,7 @@ ENV npm_config_cache=/app/.npmcache
 RUN npm install --no-optionnal
 RUN npm run build
 
-EXPOSE $PORT
+EXPOSE $API_PORT
 
 ENTRYPOINT [ "npm", "run" ]
 CMD [ "prod" ]

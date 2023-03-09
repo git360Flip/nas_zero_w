@@ -10,7 +10,7 @@ export enum MODES {
 }
 
 export const config = {
-  port: env('PORT').asPortNumber(),
+  port: env('API_PORT').asPortNumber(),
   pinCode: env('PIN_CODE').asString(),
   rootId: env('ROOT_ID').asString(),
   mode: env('MODE').asEnum(Object.values(MODES)),
