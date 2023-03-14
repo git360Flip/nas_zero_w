@@ -20,7 +20,7 @@ The micro USB to USB Adapter can connect a USB Keyboard to control your Pi Zero 
 
 1. Install Raspbian https://www.raspberrypi.com/documentation/computers/getting-started.html
 2. Connect your Pi Zero W to your private network
-3. Create an Access Point https://thepi.io/how-to-use-your-raspberry-pi-as-a-wireless-access-point/
+3. Create an Access Point https://gist.github.com/ysr23/c4a9d7185ed5c6d7ccfa31deead44070
 
 ## Setup
 
