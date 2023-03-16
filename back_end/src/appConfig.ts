@@ -15,6 +15,11 @@ export const config = {
   rootId: env('ROOT_ID').asString(),
   mode: env('MODE').asEnum(Object.values(MODES)),
   secretKey: env('SECRET_KEY').asString(),
+  dbUser: env('DATABASE_USER').asString(),
+  dbName: env('DATABASE_NAME').asString(),
+  dbPassword: env('DATABASE_PASSWORD').asString(),
+  dbPort: env('DATABASE_PORT').asPortNumber(),
+  dbHost: env('DATABASE_HOST').asString(),
   dbUrl: env('DATABASE_URL').asString(),
   saltRounds: 12,
 };

@@ -47,7 +47,7 @@ router.post(
   '/user/login',
   validate(UserLoginDto),
   handler(async (req, res) => {
-    const user = await controllers.login(req.body, res);
+    await controllers.login(req.body, res);
     res.sendStatus(httpStatus.OK);
   }),
 );

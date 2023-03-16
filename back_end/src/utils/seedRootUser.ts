@@ -1,28 +1,18 @@
-import db from '../appDatabase';
+import { createUser, DB_ERROR, getUserById } from '../appDatabase';
 import { config } from '../appConfig';
 import logger from '../appLogger';
-import { hashPassword } from './hash';
 
 export default async function seedAdminUser() {
   logger.info('Seeding root user...');
 
-  const user = await db.user.findUnique({
-    where: {
-      id: config.rootId
+  try {
+    await getUserById(config.rootId);
+  } catch (error: any) {
+    if (error === DB_ERROR.NOT_FOUND) {
+      logger.info('Root user not found');
+      await createUser(config.rootId, config.pinCode);
+    } else {
+      logger.error(error);
     }
-  });
-
-  if (user != null) {
-    logger.info('Root user already exists. Skipping database seeding');
-    return;
   }
-
-  const hashedPassword = await hashPassword(config.pinCode);
-  await db.user.create({
-    data: {
-      id: config.rootId,
-      password: hashedPassword,
-      lastLoggedInDate: "Never"
-    },
-  });
 }

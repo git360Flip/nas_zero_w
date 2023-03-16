@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:stable-alpine
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY ./certificates/fullchain.pem /etc/ssl/certs/fullchain.pem

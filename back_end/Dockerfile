@@ -1,17 +1,17 @@
 FROM node:lts-alpine
 
-RUN mkdir /app && mkdir /app/logs -p && chown node: /app -R
+RUN mkdir /api && mkdir /api/logs -p && chown node: /api -R
 
-COPY . /app
-WORKDIR /app
+WORKDIR /api
 
-RUN mkdir /app/.npmcache
-ENV npm_config_cache=/app/.npmcache
+COPY package*.json ./
+RUN npm install
 
-RUN npm install --no-optionnal
+COPY . .
+
 RUN npm run build
 
 EXPOSE $API_PORT
 
 ENTRYPOINT [ "npm", "run" ]
-CMD [ "prod" ]
+CMD [ "start" ]
