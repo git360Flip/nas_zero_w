@@ -1,7 +1,7 @@
 import httpStatus from 'http-status-codes';
 import createError from 'http-errors';
 import { config } from "../../appConfig";
-import { DB_ERROR, getUserById, updateUserLastLoggedInDate } from "../../appDatabase";
+import { DB_ERROR, getUserById, updateUserConnection } from "../../appDatabase";
 import { UserLoginDto, UserRo } from "./userTypes";
 import { verifyPassword } from '../../utils/hash';
 import { jwtr } from '../../appStore';
@@ -18,7 +18,7 @@ export async function getLastConnectionDate(): Promise<UserRo | undefined> {
   try {
     const user = await getUserById(config.rootId);
     return {
-      lastLoggedInDate: user.lastLoggedInDate
+      connection: user.connection
     }
   } catch (error) {
     if (error === DB_ERROR.NOT_FOUND) {
@@ -47,7 +47,7 @@ export async function login(userLoginDto: UserLoginDto, res: any) {
     } else {
       const now = getCurrentConnectionTime();
       try {
-        await updateUserLastLoggedInDate(user.id, now);
+        await updateUserConnection(user.id, now);
         if (jwtr != null) {
           const expireIn = 24 * 60 * 60;
           const token = await jwtr.sign({

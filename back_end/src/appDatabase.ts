@@ -1,5 +1,6 @@
 import { Pool } from 'pg';
 import { config, MODES } from './appConfig';
+import logger from './appLogger';
 import { User } from './components/user/userTypes';
 import { hashPassword } from './utils/hash';
 
@@ -20,8 +21,8 @@ const db = new Pool({
 });
 
 export async function createUser(id: string, password: string) {
-  const hashedPassword = await hashPassword(config.pinCode);
-  db.query('INSERT INTO users (id, password, lastloggedindate) VALUES ($1, $2, $3)', [id, hashedPassword, "Never"], (error: any) => {
+  const hashedPassword = await hashPassword(password);
+  db.query('INSERT INTO users (id, password, connection) VALUES ($1, $2, $3)', [id, hashedPassword, "Never"], (error: any) => {
     if (error) {
       throw DB_ERROR.CREATE_USER_ERROR
     }
@@ -44,7 +45,7 @@ export async function getUserById(id: string): Promise<User> {
   }
 }
 
-export async function updateUserLastLoggedInDate(id: string, lastLoggedInDate: string) {
+export async function updateUserConnection(id: string, lastLoggedInDate: string) {
   try {
     const results = await db.query('SELECT * FROM users WHERE id = $1', [id]);
     if (results.rowCount !== 1) {
@@ -52,7 +53,7 @@ export async function updateUserLastLoggedInDate(id: string, lastLoggedInDate: s
     } else {
       const user = results.rows[0];
       try {
-        await db.query('UPDATE users SET lastloggedindate = $1, WHERE id = $2', [lastLoggedInDate, user.id]);
+        await db.query('UPDATE users SET connection = $1 WHERE id = $2', [lastLoggedInDate, user.id]);
       } catch {
         throw DB_ERROR.UPDATE_USER_ERROR
       }

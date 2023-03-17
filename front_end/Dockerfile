@@ -5,6 +5,12 @@ WORKDIR /web
 COPY package*.json ./
 RUN npm install
 
+ARG VITE_MODE
+ENV VITE_MODE=$VITE_MODE
+
+ARG VITE_API_PORT
+ENV VITE_API_PORT=$VITE_API_PORT
+
 COPY . .
 
 RUN npm run build

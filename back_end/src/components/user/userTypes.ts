@@ -10,9 +10,9 @@ export class UserLoginDto {
 export interface User {
   id: string;
   password: string;
-  lastLoggedInDate: string;
+  connection: string;
 }
 
 export interface UserRo extends Ro {
-  lastLoggedInDate: string;
+  connection: string;
 }

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useStore } from '@/utils/store';
 import { onMounted, ref } from 'vue'
 
 const form = ref<HTMLFormElement | null>(null)
@@ -7,6 +8,8 @@ const pin1 = ref<HTMLInputElement | null>(null)
 const pin2 = ref<HTMLInputElement | null>(null)
 const pin3 = ref<HTMLInputElement | null>(null)
 const errorMsg = ref("");
+
+const store = useStore();
 
 onMounted(() => {
   pin0.value?.focus()
@@ -22,14 +25,10 @@ async function sendCode() {
   if (code.length === 4) {
     form.value?.reset()
     pinFocus(pin0.value)
-    const response = await fetch(`https://127.0.0.1:8000/user/login`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({password: code})
-      })
-    if (response.status === 200) {
+    const status = await store.state.api.login(code)
+    if (status === 200) {
       errorMsg.value = ""
-    } else if (response.status === 401) {
+    } else if (status === 401) {
       errorMsg.value = "Invalid Password"
     } else {
       errorMsg.value = "User not created"

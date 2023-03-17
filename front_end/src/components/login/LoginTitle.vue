@@ -1,23 +1,15 @@
 <script setup lang="ts">
 import { useStore } from '../../utils/store';
 import { onMounted } from 'vue';
-import type UserRo from '../../utils/types/userRo';
 
 const store = useStore();
 
-async function getLastConnectionDate() {
-  const response = await fetch(`https://127.0.0.1:8000/user`, {
-      method: 'GET',
-      headers: {'Content-Type': 'application/json'},
-    })
-  if (response.status == 200) {
-    const jsonData = await response.json() as UserRo;
-    store.state.connection = jsonData.lastLoggedInDate;
-  }
-}
-
 onMounted(() => {
-  getLastConnectionDate();
+  store.state.api.getLastConnectionDate().then((user) => {
+    if (user != null) {
+      store.state.connection = user.connection
+    }
+  });
 })
 
 defineProps<{
