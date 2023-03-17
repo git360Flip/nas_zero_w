@@ -5,6 +5,23 @@ You can upload and download files from a hard disk,
 plugged into the USB port of your Raspberry Pi Zero W.
 
 
+## Last update: v0.1.4-alpha   
+
+- Https for front-end & back-end
+- Http redirection to https
+- Access to page with hostname
+- Login feature with env variables
+- Production mode on Pi Zero W
+- Development mode
+- Docker compose to run all components of the project  
+    
+Only requirements on Pi Zero W are:   
+    
+1) Setup OS
+2) Install Docker
+3) Transfer a release of the project
+4) Run docker compose
+
 ## Requirements
 
 You need at least a Raspberry Pi Zero W to run this private NAS.  
