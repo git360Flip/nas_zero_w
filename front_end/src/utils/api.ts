@@ -15,12 +15,16 @@ export default class Api {
   }
 
   async getLastConnectionDate(): Promise<UserRo | undefined> {
-    const response = await fetch(this.rootUrl + 'user', {
-      method: 'GET',
-      headers: this.headers,
-    })
-    if (response.status == 200) {
-      return await response.json() as UserRo;
+    try {
+      const response = await fetch(this.rootUrl + 'user', {
+        method: 'GET',
+        headers: this.headers,
+      })
+      if (response.status == 200) {
+        return await response.json() as UserRo;
+      }
+    } catch {
+      return undefined;
     }
   }
 

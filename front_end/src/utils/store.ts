@@ -12,7 +12,7 @@ export const key: InjectionKey<Store<State>> = Symbol()
 export const store = createStore<State>({
   state: {
     api: new Api(),
-    connection: "Not connected to back end"
+    connection: ''
   }
 })
 

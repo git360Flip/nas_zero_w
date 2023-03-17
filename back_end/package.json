@@ -11,7 +11,7 @@
     "start": "MODE=prod node dist",
     "build": "tsc",
     "redis": "docker run --name redis -p ${REDIS_PORT}:${REDIS_PORT} -d redis:latest",
-    "db": "docker run --name db -e POSTGRES_PASSWORD=${DATABASE_PASSWORD} -e POSTGRES_USER=${DATABASE_USER} -p ${DATABASE_PORT}:${DATABASE_PORT} -d postgres:alpine",
+    "db": "docker run --name db -e POSTGRES_DB=${DATABASE_NAME} -e POSTGRES_PASSWORD=${DATABASE_PASSWORD} -e POSTGRES_USER=${DATABASE_USER} -p ${DATABASE_PORT}:${DATABASE_PORT} -d postgres:alpine && sleep 2 && docker cp ./sql/create_tables.sql db:./ && docker exec db psql -U $DATABASE_USER -d $DATABASE_NAME -a -f ./create_tables.sql",
     "dev": "npx ts-node-dev --respawn --cls --exit-child src"
   },
   "repository": {

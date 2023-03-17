@@ -8,6 +8,8 @@ onMounted(() => {
   store.state.api.getLastConnectionDate().then((user) => {
     if (user != null) {
       store.state.connection = user.connection
+    } else {
+      store.state.connection = 'Not connected to back end'
     }
   });
 })

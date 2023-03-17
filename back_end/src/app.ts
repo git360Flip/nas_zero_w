@@ -7,7 +7,7 @@ import notFoundMiddleware from './middlewares/notFoundMiddleware';
 
 // Development and production servers
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://127.0.0.1' ],
+  origin: ['http://localhost:5173', 'https://nas.local', 'https://127.0.0.1' ],
   credentials: true,
 };
 const app = express();
