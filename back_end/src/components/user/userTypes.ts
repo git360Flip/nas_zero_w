@@ -7,6 +7,12 @@ export class UserLoginDto {
   password!: string;
 }
 
+export interface User {
+  id: string;
+  password: string;
+  connection: string;
+}
+
 export interface UserRo extends Ro {
-  lastLoggedInDate: string;
+  connection: string;
 }

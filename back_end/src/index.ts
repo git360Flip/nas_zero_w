@@ -5,7 +5,6 @@ import logger from './appLogger';
 import { config } from './appConfig';
 import waitApp from './utils/waitApp';
 import seedAdminUser from './utils/seedRootUser';
-import closeApp from './utils/closeApp';
 
 const { port } = config;
 
@@ -26,7 +25,6 @@ async function main() {
   process.on('SIGINT', async () => {
     if (sigIntCounter < 1) {
       logger.info(`Stopping server...`);
-      await closeApp();
       setTimeout(() => process.exit(0), 1000);
     }
     sigIntCounter += 1;

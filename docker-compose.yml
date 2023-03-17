@@ -5,22 +5,29 @@ services:
         build: ./reverse_proxy
         restart: always
         networks:
-          - reverse_proxy_network
+            - reverse_proxy_network
+        depends_on:
+            - web
         ports:
-          - "443:443"
-          - "80:80"
+            - "443:443"
+            - "80:80"
 
     web:
-        build: ./front_end
+        build:
+            context: ./front_end
+            dockerfile: ./Dockerfile
+            args:
+                - VITE_MODE=prod
+                - VITE_API_PORT=${API_PORT}
         restart: always
-        depends_on:
-            - reverse_proxy
         networks:
             - reverse_proxy_network
 
     api:
         build: ./back_end
         restart: always
+        depends_on:
+            - db
         environment:
             - API_PORT
             - ROOT_ID
@@ -29,6 +36,11 @@ services:
             - MODE=prod
             - REDIS_HOST=redis
             - REDIS_PORT
+            - DATABASE_NAME
+            - DATABASE_PASSWORD
+            - DATABASE_USER
+            - DATABASE_PORT
+            - DATABASE_HOST=db
             - DATABASE_URL=postgresql://$DATABASE_USER:$DATABASE_PASSWORD@db:$DATABASE_PORT/$DATABASE_NAME
         ports:
             - "${API_PORT}:${API_PORT}"
@@ -36,7 +48,7 @@ services:
             - backend
 
     redis:
-        image: redis:latest
+        image: redis:alpine
         restart: always
         networks:
             - backend
@@ -44,6 +56,8 @@ services:
     db:
         image: postgres:alpine
         restart: always
+        depends_on:
+            - redis
         environment: 
             - POSTGRES_USER=${DATABASE_USER}
             - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
@@ -52,6 +66,8 @@ services:
             - backend
         volumes:
             - db-data:/var/lib/postgresql/data
+            - ./back_end/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+
 
 networks:
     backend:

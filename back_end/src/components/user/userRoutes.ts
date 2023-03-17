@@ -27,13 +27,13 @@ const router = express.Router();
  *       description: User Response Object
  *       type: object
  *       required:
- *         - lastLoggedInDate
+ *         - connection
  *       properties:
- *         lastLoggedInDate:
+ *         connection:
  *           type: string
  *           description: Date of the latest connection
  *       example:
- *         lastLoggedInDate: 03/03/2023 16:43
+ *         connection: 03/03/2023 16:43
  */
 
 /**
@@ -47,7 +47,7 @@ router.post(
   '/user/login',
   validate(UserLoginDto),
   handler(async (req, res) => {
-    const user = await controllers.login(req.body, res);
+    await controllers.login(req.body, res);
     res.sendStatus(httpStatus.OK);
   }),
 );
