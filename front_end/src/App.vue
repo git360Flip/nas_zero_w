@@ -4,16 +4,18 @@ import LoginCard from './components/login/LoginCard.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="File Manager logo" src="./assets/logo.png" />
-    <LoginTitle title="My File Manager" />
-  </header>
+  <div class="app">
+    <header>
+      <img alt="File Manager logo" src="./assets/logo.png" />
+      <LoginTitle/>
+    </header>
 
-  <main class="centered">
-    <div class="login-card">
-      <LoginCard />
-    </div>
-  </main>
+    <main>
+      <div class="login-card">
+        <LoginCard/>
+      </div>
+    </main>
+  </div>
 </template>
 
 <style scoped>
@@ -24,11 +26,12 @@ header {
   justify-content: center;
 }
 
-.centered {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 360px;
+  align-items: center;
 }
 
 .login-card {
@@ -37,12 +40,4 @@ header {
   justify-content: center;
 }
 
-@media (max-height: 360px) {
-  .centered {
-    position: fixed;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -40%);
-  }
-}
 </style>
