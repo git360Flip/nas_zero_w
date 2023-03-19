@@ -2,6 +2,7 @@
 import { useStore } from '@/utils/store';
 import { onMounted, ref } from 'vue'
 import { useLoading } from 'vue-loading-overlay'
+import { useRouter } from 'vue-router';
 
 const form = ref<HTMLFormElement | null>(null)
 const pin0 = ref<HTMLInputElement | null>(null)
@@ -13,6 +14,7 @@ const isLoading = ref(false)
 
 const loading = useLoading()
 const store = useStore()
+const router = useRouter()
 
 onMounted(() => {
   pin0.value?.focus()
@@ -35,6 +37,7 @@ async function sendCode() {
     const status = await store.state.api.login(code)
     if (status === 200) {
       errorMsg.value = ""
+      router.push('/files')
     } else if (status === 401) {
       errorMsg.value = "Invalid Password"
     } else {

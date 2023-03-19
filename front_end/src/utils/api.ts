@@ -20,7 +20,7 @@ export default class Api {
         method: 'GET',
         headers: this.headers,
       })
-      if (response.status == 200) {
+      if (response.status === 200) {
         return await response.json() as UserRo;
       }
     } catch {
@@ -34,7 +34,23 @@ export default class Api {
       headers: this.headers,
       body: JSON.stringify({password: pinCode})
     })
+    if (response.status === 200) {
+      const token = response.headers.get("authorization");
+      if (token != null) {
+        this.headers = {
+          'Content-Type': 'application/json',
+          'Authorization': token,
+        }
+      }
+    }
     return response.status;
+  }
+
+  async logout() {
+    await fetch(this.rootUrl + 'user/logout', {
+      method: 'POST',
+      headers: this.headers,
+    })
   }
 
 }
