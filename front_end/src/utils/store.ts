@@ -5,6 +5,9 @@ import Api from './api'
 export interface State {
   api: Api
   connection: string
+  token: string
+  diskName: string
+  path: string
 }
 
 export const key: InjectionKey<Store<State>> = Symbol()
@@ -12,7 +15,10 @@ export const key: InjectionKey<Store<State>> = Symbol()
 export const store = createStore<State>({
   state: {
     api: new Api(),
-    connection: ''
+    connection: '',
+    token: '',
+    diskName: '',
+    path: '',
   }
 })
 

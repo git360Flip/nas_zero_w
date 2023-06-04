@@ -14,8 +14,8 @@ async function main() {
   await seedAdminUser();
   const httpsServer = https.createServer(
     {
-      key: fs.readFileSync('./certificates/privkey.pem'),
-      cert: fs.readFileSync('./certificates/fullchain.pem'),
+      key: fs.readFileSync('./certificates/localhost.key'),
+      cert: fs.readFileSync('./certificates/localhost.crt'),
     },
     app,
   );

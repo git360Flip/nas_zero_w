@@ -1,6 +1,7 @@
 import express from 'express';
 
 import user from './user/userRoutes';
+import file from './file/fileRoutes';
 
 const router = express.Router();
 
@@ -9,5 +10,6 @@ router.get('/', (_, res) => {
 });
 
 router.use(user);
+router.use(file);
 
 export default router;

@@ -1,5 +1,5 @@
 FROM nginx:stable-alpine
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY ./certificates/fullchain.pem /etc/ssl/certs/fullchain.pem
-COPY ./certificates/privkey.pem /etc/ssl/private/privkey.pem
+COPY ./certificates/localhost.crt /etc/ssl/certs/localhost.crt
+COPY ./certificates/localhost.key /etc/ssl/private/localhost.key

@@ -11,6 +11,8 @@ export enum MODES {
 
 export const config = {
   port: env('API_PORT').asPortNumber(),
+  ignoreDSStoreFiles: env('IGNORE_DS_STORE').asBool(),
+  diskRootPath: env('MODE').asEnum(Object.values(MODES)) !== MODES.PROD ? env('DISK_ROOT_PATH').asString() : "/disk/",
   pinCode: env('PIN_CODE').asString(),
   rootId: env('ROOT_ID').asString(),
   mode: env('MODE').asEnum(Object.values(MODES)),

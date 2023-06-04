@@ -1,0 +1,1 @@
+source .envrc && cd ./front_end && npm i && npm run dev & source .envrc && cd ./back_end && npm i && npm run start_redis || npm run create_redis && npm run start_db || npm run create_db && npm run dev
