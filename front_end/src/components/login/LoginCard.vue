@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useStore } from '@/utils/store';
 import { onMounted, ref } from 'vue'
-import { useLoading } from 'vue-loading-overlay'
+import { startLoading } from '@/utils/loader';
 import { useRouter } from 'vue-router';
 
 const form = ref<HTMLFormElement | null>(null)
@@ -12,7 +12,6 @@ const pin3 = ref<HTMLInputElement | null>(null)
 const errorMsg = ref("")
 const isLoading = ref(false)
 
-const loading = useLoading()
 const store = useStore()
 const router = useRouter()
 
@@ -29,11 +28,7 @@ async function sendCode() {
   const code = getCode()
   if (code.length === 4) {
     isLoading.value = true;
-    const loader = loading.show({
-      loader: "dots",
-      color: "white",
-      backgroundColor: "black",
-    })
+    const loader = startLoading()
     const status = await store.state.api.login(code)
     if (status === 200) {
       errorMsg.value = ""
@@ -49,7 +44,7 @@ async function sendCode() {
 }
 
 async function validateInput(evt: KeyboardEvent, ref: HTMLInputElement | null): Promise<boolean> {
-  if (evt.key === 'Enter') {
+  if (evt.key === 'Enter' && store.state.connection !== 'Not connected to back end') {
     await sendCode();
     form.value?.reset()
     pinFocus(pin0.value)
@@ -83,7 +78,7 @@ async function focusNextPin(
 }
 
 async function tryPin(evt: KeyboardEvent, ref: HTMLInputElement | null) {
-  if (await validateInput(evt, ref)) {
+  if (await validateInput(evt, ref) && store.state.connection !== 'Not connected to back end') {
     await sendCode();
     form.value?.reset();
     pinFocus(pin0.value);

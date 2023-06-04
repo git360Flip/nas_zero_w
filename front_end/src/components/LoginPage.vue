@@ -4,7 +4,7 @@ import LoginCard from './login/LoginCard.vue'
 </script>
 
 <template>
-  <div class="login-page">
+  <div>
     <header>
       <img alt="File Manager logo" src="../assets/logo.png" />
       <LoginTitle/>
@@ -14,6 +14,7 @@ import LoginCard from './login/LoginCard.vue'
       <div class="login-card">
         <LoginCard/>
       </div>
+      <h4 class="credit">Made by Enzo Forzani - alpha v0.2.0</h4>
     </main>
   </div>
 </template>
@@ -26,18 +27,19 @@ header {
   justify-content: center;
 }
 
-.login-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 360px;
-  align-items: center;
+.login-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.login-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.credit {
+  position: fixed;
+  width: 250px;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 </style>
