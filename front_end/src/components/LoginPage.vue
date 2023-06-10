@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import LoginTitle from './login/LoginTitle.vue'
 import LoginCard from './login/LoginCard.vue'
+import { useStore } from '@/utils/store'
+import { onMounted } from 'vue'
+
+const store = useStore()
+
+onMounted(() => {
+  store.state.network.api.getLastConnectionDate().then((connectionResult) => {
+    store.state.network.connectionState = connectionResult
+  })
+})
 </script>
 
 <template>
@@ -11,7 +21,7 @@ import LoginCard from './login/LoginCard.vue'
     </header>
 
     <main>
-      <div class="login-card">
+      <div v-if="store.state.network.connectionState !== 'Not connected to back end'" class="login-card">
         <LoginCard/>
       </div>
       <h4 class="credit">Made by Enzo Forzani - alpha v0.2.0</h4>

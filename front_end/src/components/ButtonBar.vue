@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-import { useStore } from '@/utils/store';
+import { useRouter } from 'vue-router'
+import { useStore } from '@/utils/store'
 
 const router = useRouter()
 const store = useStore()
 
 function logout() {
-  store.state.api.logout();
+  store.state.network.api.logout()
   router.push('/')
 }
 defineProps<{

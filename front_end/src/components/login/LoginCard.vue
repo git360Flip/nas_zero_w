@@ -27,9 +27,9 @@ function pinFocus(ref: HTMLInputElement | null) {
 async function sendCode() {
   const code = getCode()
   if (code.length === 4) {
-    isLoading.value = true;
+    isLoading.value = true
     const loader = startLoading()
-    const status = await store.state.api.login(code)
+    const status = await store.state.network.api.login(code)
     if (status === 200) {
       errorMsg.value = ""
       router.push('/files')
@@ -39,13 +39,13 @@ async function sendCode() {
       errorMsg.value = "User not created"
     }
     loader.hide()
-    isLoading.value = false;
+    isLoading.value = false
   }
 }
 
 async function validateInput(evt: KeyboardEvent, ref: HTMLInputElement | null): Promise<boolean> {
-  if (evt.key === 'Enter' && store.state.connection !== 'Not connected to back end') {
-    await sendCode();
+  if (evt.key === 'Enter') {
+    await sendCode()
     form.value?.reset()
     pinFocus(pin0.value)
   }
@@ -78,10 +78,10 @@ async function focusNextPin(
 }
 
 async function tryPin(evt: KeyboardEvent, ref: HTMLInputElement | null) {
-  if (await validateInput(evt, ref) && store.state.connection !== 'Not connected to back end') {
-    await sendCode();
-    form.value?.reset();
-    pinFocus(pin0.value);
+  if (await validateInput(evt, ref)) {
+    await sendCode()
+    form.value?.reset()
+    pinFocus(pin0.value)
   }
 }
 

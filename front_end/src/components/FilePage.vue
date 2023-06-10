@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import ButtonBar from './ButtonBar.vue';
-import FilesList from './files/FilesList.vue';
-import FilesNavigation from './files/navigation/FilesNavigation.vue';
+import ButtonBar from './ButtonBar.vue'
+import FilesList from './files/FilesList.vue'
+import FilesNavigation from './files/navigation/FilesNavigation.vue'
+
 </script>
 
 <template>

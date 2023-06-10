@@ -1,25 +1,15 @@
 <script setup lang="ts">
-import { useStore } from '@/utils/store';
-import { onMounted } from 'vue';
+import { useStore } from '@/utils/store'
 
-const store = useStore();
+const store = useStore()
 
-onMounted(() => {
-  store.state.api.getLastConnectionDate().then((user) => {
-    if (user != null) {
-      store.state.connection = user.connection
-    } else {
-      store.state.connection = 'Not connected to back end'
-    }
-  });
-})
 </script>
 
 <template>
   <div class="title">
     <h1 class="white">My File Manager</h1>
-    <h3 v-if="store.state.connection === 'Not connected to back end'" class="red">Not connected to back end</h3>
-    <h3 v-else>{{ store.state.connection }}</h3>
+    <h3 v-if="store.state.network.connectionState === 'Not connected to back end'" class="red">{{ store.state.network.connectionState }}</h3>
+    <h3 v-else>{{ store.state.network.connectionState }}</h3>
   </div>
 </template>
 

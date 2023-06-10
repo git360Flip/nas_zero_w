@@ -8,12 +8,6 @@ import FilesPath from './FilesPath.vue';
 <template>
   <div class="card">
     <div class="inner-card">
-      <div class="navigation-button">
-        <img src="../../../assets/arrow-left.png"/>
-      </div>
-      <div class="navigation-button">
-        <img src="../../../assets/arrow-right.png"/>
-      </div>
       <div class="filepath">
         <FilesPath/>
       </div>
@@ -39,14 +33,15 @@ import FilesPath from './FilesPath.vue';
   padding-left: 6px;
   padding-right: 6px;
   display: flex;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
 }
 
 .files-button-div {
   padding-top: 6px;
   display: flex;
-  align-content: center;
+  justify-content: center;
   flex-direction: row;
 }
 
@@ -60,7 +55,8 @@ import FilesPath from './FilesPath.vue';
 }
 
 img:hover {
-  filter: invert(100%)
+  filter: invert(100%);
+  cursor: pointer;
 }
 
 img {

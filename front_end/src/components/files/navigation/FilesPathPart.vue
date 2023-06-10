@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { navigateToFile } from '@/utils/navigation'
+import { useStore } from '@/utils/store'
+
+const store = useStore()
 
 defineProps<{
   folderName: string
@@ -8,7 +12,7 @@ defineProps<{
 <template>
   <div class="body">
     <h5>/</h5>
-    <h5 class="folder-name">{{ folderName }}</h5>
+    <h5 @click="navigateToFile(store, folderName)" class="folder-name">{{ folderName }}</h5>
   </div>
 </template>
 
@@ -21,7 +25,7 @@ defineProps<{
 }
 
 h5 {
-  margin-left: 2px;
+  margin-left: 3px;
 }
 
 .folder-name {

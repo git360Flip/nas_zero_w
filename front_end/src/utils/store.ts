@@ -1,27 +1,40 @@
 import type { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
 import Api from './api'
+import type { FileDisk } from './types/filesRo'
 
 export interface State {
-  api: Api
-  connection: string
-  token: string
+  network: Network
+  navigation: Navigation
+  files: FileDisk[]
+}
+
+interface Navigation {
   diskName: string
-  path: string
+  cwd: string
+}
+
+interface Network {
+  api: Api
+  connectionState: string
 }
 
 export const key: InjectionKey<Store<State>> = Symbol()
 
 export const store = createStore<State>({
   state: {
-    api: new Api(),
-    connection: '',
-    token: '',
-    diskName: '',
-    path: '',
+    network: {
+      api: new Api(),
+      connectionState: '',
+    },
+    navigation: {
+      diskName: '',
+      cwd: '',
+    },
+    files: [],
   }
 })
 
-export function useStore () {
+export function useStore() {
   return baseUseStore(key)
 }

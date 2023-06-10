@@ -1,26 +1,19 @@
 <script setup lang="ts">
-import { useStore } from '@/utils/store';
-import FilesPathPart from './FilesPathPart.vue';
-import { onMounted, ref, type Ref } from 'vue';
+import { useStore } from '@/utils/store'
+import { getPathSegments, navigateToFile } from '@/utils/navigation'
+import FilesPathPart from './FilesPathPart.vue'
 
-const pathSegments: Ref<string[]> = ref([])
-
-const store = useStore();
-
-onMounted(() => {
-  pathSegments.value = decomposePath(store.state.path)
-})
-
-function decomposePath(path: string) {
-  return path.split('/').splice(1)
-}
+const store = useStore()
 
 </script>
 
 <template>
   <div class="body">
-    <h5>{{ store.state.diskName }}</h5>
-    <FilesPathPart :folder-name="folderName" v-for="folderName in pathSegments" :key="folderName"/>
+    <h5 @click="navigateToFile(store, store.state.navigation.diskName)" >{{ store.state.navigation.diskName }}</h5>
+    <FilesPathPart
+      :key="folderName"
+      :folder-name="folderName"
+      v-for="folderName in getPathSegments(store.state.navigation.cwd)"/>
   </div>
 </template>
 

@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { FileDisk } from '@/utils/types/filesRo';
+import type { FileDisk } from '@/utils/types/filesRo'
+import { navigateToFile } from '@/utils/navigation'
+import { useStore } from '@/utils/store'
 
 const isMouseOver = ref(false)
+
+const store = useStore()
 
 defineProps<{
   file: FileDisk
@@ -11,7 +15,7 @@ defineProps<{
 
 <template>
   <div :class="{ 'body': true, 'body-hover': isMouseOver }" @mouseover="isMouseOver = true" @mouseleave="isMouseOver = false">
-    <div v-if="file.isDir === true" >
+    <div v-if="file.isDir === true" @click="navigateToFile(store, file.name)">
       <img src="../../assets/filetype/folder.png" :class="{ 'img-hover': isMouseOver }"/>
     </div>
     <div v-else-if="file.ext.includes('aac') === true">
@@ -84,7 +88,7 @@ defineProps<{
       <img src="../../assets/filetype/file.png" :class="{ 'img-hover': isMouseOver }"/>
     </div>
     <div class="title">
-      <h5 :class="{ 'text-hover': isMouseOver }">{{ file.name }}</h5>
+      <h5 @click="navigateToFile(store, file.name)" :class="{ 'text-hover': isMouseOver }">{{ file.name }}</h5>
     </div>
   </div>
 </template>
