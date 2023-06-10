@@ -16,21 +16,21 @@ plugged into the USB port of your Raspberry Pi Zero W.
 
 ## Next planned updates
 
-[ALPHA] **v0.2.0**
+#### [ALPHA] **v0.2.0**
 - Navigation
 - Upload a file
 - Download a file
 
-[ALPHA] **v0.3.0**
+#### [ALPHA] **v0.3.0**
 - Delete a file
 - Rename a file
 - Move a file
 
-[ALPHA] **v0.4.0**
+#### [ALPHA] **v0.4.0**
 - Options
 - Quick Notes
 
-[ALPHA] **v0.5.0**
+#### [ALPHA] **v0.5.0**
 - Wifi AP
 
 ## Requirements
@@ -57,8 +57,9 @@ The micro USB to USB Adapter can also connect a USB Keyboard to control your Pi 
 > 4) Transfer a release of the project
 > 5) Run docker compose
     
+### Complete installation detailed below
     
-1) Install **Raspberry Pi OS Lite** with [Raspberry Pi Imager](https://www.raspberrypi.com/software/).  
+#### 1) Install **Raspberry Pi OS Lite** with [Raspberry Pi Imager](https://www.raspberrypi.com/software/).  
 
 Before writing to the micro SD Card, make sure to set these settings:   
 
@@ -68,6 +69,6 @@ Before writing to the micro SD Card, make sure to set these settings:
 - **Configure the WiFi**
 - Define the locale settings
 
-2) Install **Docker** on your Raspberry Pi Zero W
+#### 2) Install **Docker** on your Raspberry Pi Zero W
 
-3) Transfer **NAS Zero W files** on your Raspberry Pi Zero W and run the Docker-compose file
+#### 3) Transfer **NAS Zero W files** on your Raspberry Pi Zero W and run the Docker-compose file
